@@ -40,46 +40,46 @@
 
 ***
 Овтет:
-Сотрудники (
-    идентификатор serial PRIMARY KEY,
-    фамилия varchar(50),
-    имя varchar(50),
-    отчество varchar(50),
-    должность_id integer REFERENCES Должности(идентификатор),
-    подразделение_id integer REFERENCES Подразделения(идентификатор),
-    дата_найма date,
-    оклад numeric(10,2)
-);
-Должности (
-    идентификатор serial PRIMARY KEY,
-    название varchar(100)
-);
-Типы_подразделений (
-    идентификатор serial PRIMARY KEY,
-    тип varchar(50)
-);
-Подразделения (
-    идентификатор serial PRIMARY KEY,
-    название varchar(200),
-    тип_подразделения_id integer REFERENCES Типы_подразделений(идентификатор),
-    адрес_филиала_id integer REFERENCES Адреса(идентификатор)
-);
-Адреса (
-    идентификатор serial PRIMARY KEY,
-    регион varchar(100),
-    город varchar(100),
-    улица varchar(200),
-    дом varchar(20)
-);
-Проекты (
-    идентификатор serial PRIMARY KEY,
-    название varchar(300)
-);
-Назначения_на_проекты (
-    сотрудник_id integer REFERENCES Сотрудники(идентификатор),
-    проект_id integer REFERENCES Проекты(идентификатор),
-    PRIMARY KEY (сотрудник_id, проект_id)
-);
+Сотрудники (  
+    идентификатор serial PRIMARY KEY,  
+    фамилия varchar(50),  
+    имя varchar(50),  
+    отчество varchar(50),  
+    должность_id integer REFERENCES Должности(идентификатор),  
+    подразделение_id integer REFERENCES Подразделения(идентификатор),  
+    дата_найма date,  
+    оклад numeric(10,2)  
+);  
+Должности (  
+    идентификатор serial PRIMARY KEY,  
+    название varchar(100)  
+);  
+Типы_подразделений (  
+    идентификатор serial PRIMARY KEY,  
+    тип varchar(50)  
+);  
+Подразделения (  
+    идентификатор serial PRIMARY KEY,  
+    название varchar(200),  
+    тип_подразделения_id integer REFERENCES Типы_подразделений(идентификатор),  
+    адрес_филиала_id integer REFERENCES Адреса(идентификатор)  
+);  
+Адреса (  
+    идентификатор serial PRIMARY KEY,  
+    регион varchar(100),  
+    город varchar(100),  
+    улица varchar(200),  
+    дом varchar(20)  
+);  
+Проекты (  
+    идентификатор serial PRIMARY KEY,  
+    название varchar(300)  
+);  
+Назначения_на_проекты (  
+    сотрудник_id integer REFERENCES Сотрудники(идентификатор),  
+    проект_id integer REFERENCES Проекты(идентификатор),  
+    PRIMARY KEY (сотрудник_id, проект_id)  
+);  
 ***
 
 Задание 2*
